@@ -47,5 +47,5 @@ def scrap(filename, url, format):
                 csvwriter.writerows([[name, link, size, format, origem]])
                 print(name + ':' + link) 
                 
-url = 'https://archive.org/download/3DO-fullset-ISO/3DO%20Interactive%20Multiplayer/JOGOS/'
-scrap('3do-iso.csv', url, 'ISO')    
+url = 'https://myrient.erista.me/files/Internet%20Archive/aitus95/PS3_PSN_1/'
+scrap('ps3_psn.csv', url, 'ISO')    
