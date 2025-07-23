@@ -60,7 +60,7 @@ def scrap(name, filename, format=None):
         for key, values in files_data.items():
             try:
                 name = key.strip("/")
-                if 'zip' in name:
+                if 'zip' in name or 'rvz' in name or 'wbfs' in name or 'chd' in name or '7z' in name:
                     origem = 'https://archive.org/download/' + base
                     if "size" in values:
                         size = convert_to_original_size(float(values["size"])) 
@@ -75,11 +75,11 @@ def scrap(name, filename, format=None):
             except Exception as err:
                 print('Error - ' + str(values) + ' - ' + str(err))
                 
-names = ['commodore_amiga_cd32']
+names = ['redumpwiipalrvz']
 
 for name in names:
     print(name)
     try:
-        scrap(name, 'amigacd32.csv', 'ZIP')
+        scrap(name, 'wii-rvz.csv', 'rvz')
     except Exception as err:
         print('Error - ' + name + ' - ' + str(err))
