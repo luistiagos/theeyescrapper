@@ -29,7 +29,7 @@ def scrap(filename, url, format):
         csvwriter.writerow(['path','link','size','format','origem'])
 
         for link in links:
-            if 'wbfs' in link.text or 'zip' in link.text or 'chd' in link.text or '7z' in link.text or 'rvz' in link.text:
+            if 'wbfs' in link.text or 'zip' in link.text or 'chd' in link.text or '7z' in link.text or 'iso' in link.text:
                 name = link.text #link.text.replace('.zip', '').strip()
                 #if not begin and 'Rock Band - Metal Track Pack (USA, Canada).zip' in name.strip():
                 #    begin = True
@@ -47,5 +47,5 @@ def scrap(filename, url, format):
                 csvwriter.writerows([[name, link, size, format, origem]])
                 print(name + ':' + link) 
                 
-url = 'https://myrient.erista.me/files/Redump/Panasonic%20-%203DO%20Interactive%20Multiplayer/'
-scrap('3do.csv', url, 'ZIP')    
+url = 'https://archive.org/download/3DO-fullset-ISO/3DO%20Interactive%20Multiplayer/JOGOS/'
+scrap('3do-iso.csv', url, 'ISO')    
