@@ -31,5 +31,5 @@ def gerar_html(csv_path, template_path, titulo):
         f.write(html_completo)
 
 # Exemplo de uso
-gerar_html('gba.csv', 'template.html', 'GBA')
+gerar_html('mame.csv', 'template.html', 'MAME')
 print('HTML gerado com sucesso!')

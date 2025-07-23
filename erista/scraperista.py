@@ -47,5 +47,5 @@ def scrap(filename, url, format):
                 csvwriter.writerows([[name, link, size, format, origem]])
                 print(name + ':' + link) 
                 
-url = 'https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Game%20Boy%20Advance/'
-scrap('gba.csv', url, 'ZIP')    
+url = 'https://myrient.erista.me/files/Internet%20Archive/chadmaster/mame-merged/mame-merged/'
+scrap('mame.csv', url, 'ZIP')    

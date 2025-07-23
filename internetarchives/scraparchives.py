@@ -35,7 +35,7 @@ def scrap(file, base_url, format='zip'):
             link_tag = cols[0].find('a')
             if link_tag and link_tag.get('href'):
                 file_name = link_tag.text.strip()
-                if file_name.lower().endswith('.zip') or file_name.lower().endswith('.rvz') or file_name.lower().endswith('.bin'):
+                if file_name.lower().endswith('.zip') or file_name.lower().endswith('.rvz') or file_name.lower().endswith('.iso'):
                     file_url = urljoin(base_url, link_tag.get('href').strip())
                     file_size = cols[2].text.strip() if len(cols) > 2 else 'Desconhecido'
 
@@ -58,6 +58,6 @@ def scrap(file, base_url, format='zip'):
     print(f"CSV gerado com sucesso: {file}")
 
 # URL da página
-base_url = 'https://archive.org/download/redumpwiipalrvz'
-file = 'wii-rvz.csv'
+base_url = 'https://archive.org/download/efgamecubeusa/Game%20Cube%20USA/'
+file = 'gamecube-iso.csv'
 scrap(file, base_url)
