@@ -60,7 +60,7 @@ def scrap(name, filename, format=None):
         for key, values in files_data.items():
             try:
                 name = key.strip("/")
-                if 'zip' in name or 'rvz' in name or 'wbfs' in name or 'chd' in name or '7z' in name:
+                if 'zip' in name or '7z' in name or 'wbfs' in name or 'chd' in name or 'iso' in name:
                     origem = 'https://archive.org/download/' + base
                     if "size" in values:
                         size = convert_to_original_size(float(values["size"])) 
@@ -75,11 +75,11 @@ def scrap(name, filename, format=None):
             except Exception as err:
                 print('Error - ' + str(values) + ' - ' + str(err))
                 
-names = ['redumpwiipalrvz']
+names = ['psp-game-dumps']
 
 for name in names:
     print(name)
     try:
-        scrap(name, 'wii-rvz.csv', 'rvz')
+        scrap(name, 'pspiso.csv', '7Z')
     except Exception as err:
         print('Error - ' + name + ' - ' + str(err))

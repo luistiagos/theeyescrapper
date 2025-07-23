@@ -31,5 +31,5 @@ def gerar_html(csv_path, template_path, titulo):
         f.write(html_completo)
 
 # Exemplo de uso
-gerar_html('wii-rvz.csv', 'template.html', 'Jogos Nintendo Wii')
+gerar_html('pspiso.csv', 'template.html', 'PSP - ISO')
 print('HTML gerado com sucesso!')
