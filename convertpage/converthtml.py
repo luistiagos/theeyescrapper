@@ -31,5 +31,5 @@ def gerar_html(csv_path, template_path, titulo):
         f.write(html_completo)
 
 # Exemplo de uso
-gerar_html('ps3_psn.csv', 'template.html', 'Playstation 3 - PSN')  # Ajuste o caminho do CSV e do template conforme necessário
+gerar_html('dreamcastchd.csv', 'template.html', 'Dreamcast')  # Ajuste o caminho do CSV e do template conforme necessário
 print('HTML gerado com sucesso!')

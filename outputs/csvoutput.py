@@ -75,11 +75,11 @@ def scrap(name, filename, format=None):
             except Exception as err:
                 print('Error - ' + str(values) + ' - ' + str(err))
                 
-names = ['psp-game-dumps']
+names = ['3dscia_202310']
 
 for name in names:
     print(name)
     try:
-        scrap(name, 'pspiso.csv', '7Z')
+        scrap(name, '3dscia.csv', 'cia')
     except Exception as err:
         print('Error - ' + name + ' - ' + str(err))

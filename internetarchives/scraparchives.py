@@ -35,7 +35,7 @@ def scrap(file, base_url, format='zip'):
             link_tag = cols[0].find('a')
             if link_tag and link_tag.get('href'):
                 file_name = link_tag.text.strip()
-                if file_name.lower().endswith('.zip') or file_name.lower().endswith('.rvz') or file_name.lower().endswith('.iso'):
+                if file_name.lower().endswith('.zip') or file_name.lower().endswith('.chd') or file_name.lower().endswith('.iso'):
                     file_url = urljoin(base_url, link_tag.get('href').strip())
                     file_size = cols[2].text.strip() if len(cols) > 2 else 'Desconhecido'
 
@@ -48,7 +48,7 @@ def scrap(file, base_url, format='zip'):
                     })
 
     # Escreve o CSV
-    with open(file, 'w', newline='', encoding='utf-8') as csvfile:
+    with open(file, 'a', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['path', 'link', 'size', 'format', 'origem']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter=';')
         writer.writeheader()
@@ -58,6 +58,6 @@ def scrap(file, base_url, format='zip'):
     print(f"CSV gerado com sucesso: {file}")
 
 # URL da página
-base_url = 'https://archive.org/download/efgamecubeusa/Game%20Cube%20USA/'
-file = 'gamecube-iso.csv'
+base_url = 'https://archive.org/download/DreamcastCHD2020_P-Z'
+file = 'dreamcastchd.csv'
 scrap(file, base_url)
